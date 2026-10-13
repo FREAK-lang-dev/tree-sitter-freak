@@ -45,6 +45,7 @@
 "for" @keyword
 "lend" @keyword
 "mut" @keyword
+"grounded" @keyword
 "copy" @keyword
 
 ; ============================================================
@@ -57,14 +58,17 @@
 "repeat" @keyword.control
 "times" @keyword.control
 "until" @keyword.control
+"while" @keyword.control
+"with" @keyword.control
+"step" @keyword.control
 "training" @keyword.control
 "arc" @keyword.control
 "each" @keyword.control
 "in" @keyword.control
 "give" @keyword.control
 "back" @keyword.control
-"break" @keyword.control
-"continue" @keyword.control
+(break_statement) @keyword.control
+(continue_statement) @keyword.control
 "done" @keyword.control
 
 ; ============================================================
@@ -87,9 +91,7 @@
 "some" @function.builtin
 "ok" @function.builtin
 "err" @function.builtin
-"check" @keyword.control
 "test" @keyword
-"expect" @keyword
 
 ; ============================================================
 ;  Keywords — logical operators
@@ -182,6 +184,9 @@
 (for_each_statement
   variable: (identifier) @variable)
 
+(repeat_statement
+  counter: (identifier) @variable)
+
 ; ============================================================
 ;  Annotations
 ; ============================================================
@@ -195,6 +200,8 @@
 ; ============================================================
 
 "|>" @operator
+".." @operator
+"..=" @operator
 "->" @operator
 "?" @operator
 "=" @operator
@@ -226,6 +233,7 @@
 "}" @punctuation.bracket
 
 "," @punctuation.delimiter
+";" @punctuation.delimiter
 ":" @punctuation.delimiter
 "::" @punctuation.delimiter
 "." @punctuation.delimiter
